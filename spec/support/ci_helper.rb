@@ -16,6 +16,18 @@ module Danger
         yield(system_env)
       end
 
+      def with_buddy_setup_and_is_a_pull_request
+        system_env = {
+          "BUDDY" => "true",
+          "BUILDKITE_PULL_REQUEST_REPO" => "https://github.com/danger/danger/pull/42",
+          "BUDDY_EXECUTION_PULL_REQUEST_NO" => "42",
+          "BUDDY_REPO_SLUG" => "danger/danger",
+          "BUDDY_SCM_URL" => "https://github.com/danger/danger"
+        }
+
+        yield(system_env)
+      end
+
       def with_buildkite_setup_and_is_a_pull_request
         system_env = {
           "BUILDKITE" => "true",

@@ -10,6 +10,7 @@ RSpec.describe Danger::CI do
           "Danger::Appcenter",
           "Danger::BitbucketPipelines",
           "Danger::Bitrise",
+          "Danger::Buddy",
           "Danger::Buddybuild",
           "Danger::Buildkite",
           "Danger::CircleCI",
