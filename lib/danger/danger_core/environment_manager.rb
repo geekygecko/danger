@@ -110,7 +110,10 @@ module Danger
       ui.title "Could not set up API to Code Review site for Danger\n".freeze
       ui.puts title
       ui.puts subtitle
-      ui.puts "\nFound these keys in your ENV: #{env.keys.join(', '.freeze)}."
+      ui.puts "\nFound these keys in your ENV:"
+      env.keys.each do |key|
+        ui.puts "\n#{key}"
+      end
       ui.puts "\nFailing the build, Danger cannot run without API access.".freeze
       ui.puts "You can see more information at https://danger.systems/guides/getting_started.html".freeze
     end
