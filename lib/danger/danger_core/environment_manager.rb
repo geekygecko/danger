@@ -34,6 +34,7 @@ module Danger
         next unless self.ci_source.supports?(klass)
 
         request_source = klass.new(self.ci_source, env)
+        ui.puts "DEBUG #{klass} ci_source #{self.ci_source} validates_as_ci? #{request_source.validates_as_ci?} validates_as_api_source? #{request_source.validates_as_api_source?}"
         next unless request_source.validates_as_ci?
         next unless request_source.validates_as_api_source?
         self.request_source = request_source
